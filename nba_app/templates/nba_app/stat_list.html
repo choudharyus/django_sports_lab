@@ -5,9 +5,9 @@
 
     <ul>
         {% for stat in stats %}
-        <li>
+        <ul>
             <a href="{% url 'stat_detail' pk=stat.pk %}">{{ stat.player_team }} - {{ stat.player.player_name }}</a>
-        </li>
+        </ul>
         {% endfor %}
     </ul>
 {% endblock %}
