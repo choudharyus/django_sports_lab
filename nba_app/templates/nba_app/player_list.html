@@ -2,7 +2,7 @@
 
 {% block content %}
  
-<h2>List of National Basketball Association Players <a href="{% url 'player_create' %}">(* Add Player *)</a></h2>
+<h2>List of National Basketball Association Players <button><a href="{% url 'player_create' %}"> Add Player </a></button></h2>
 
 <ul>
     {% for player in players %}

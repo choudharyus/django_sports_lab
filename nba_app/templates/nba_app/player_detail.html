@@ -3,14 +3,14 @@
 
 
 {% block content %}
-<h2>{{ player.name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a></h2>
-<a href="{% url 'player_delete' pk=player.pk %}">Delete</a>
+<h2>{{ player.name }} <button><a href="{% url 'player_edit' pk=player.pk %}">Edit Player </a></button></h2>
+<button><a href="{% url 'player_delete' pk=player.pk %}">Delete</a></button>
 <h4>{{ player.player_position }}</h4>
 
 
 <img src="{{ player.player_photo }}" alt="" class="player-photo">
 
-<h3>Stats <a href="{% url 'stat_create' %}">(+)</a></h3>
+<h3>Stats <button><a href="{% url 'stat_create' %}">Add Statistics for Player</a></button></h3>
 <ul>
     {% for stat in player.stats.all %}
     <li>
