@@ -1,0 +1,17 @@
+{% extends 'nba_app/base.html' %} {% block content %}
+
+<h2>
+  {{ player.player_name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a>
+</h2>
+<h4>{{ player.player_position }}</h4>
+
+<img src="{{ player.player_photo }}" alt="" class="player-photo" />
+<div>
+  <a href="{% url 'player_delete' pk=player.pk %}">DELETE</a>
+</div>
+<!-- added line below -->
+<h2>
+  {{ player.player_name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a>
+</h2>
+
+{% endblock %}
