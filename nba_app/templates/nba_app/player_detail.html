@@ -7,13 +7,14 @@
 <a href="{% url 'player_delete' pk=player.pk %}">Delete</a>
 <h4>{{ player.player_position }}</h4>
 
+
 <img src="{{ player.player_photo }}" alt="" class="player-photo">
 
 <h3>Stats <a href="{% url 'stat_create' %}">(+)</a></h3>
 <ul>
     {% for stat in player.stats.all %}
     <li>
-        <a href="{% url 'stat_detail' pk=stat.pk %}">{{ stat.player_team }}-{{ stat.player_point }}</a>
+        <a href="{% url 'stat_detail' pk=stat.pk %}">{{ stat.player_team }} - {{ stat.player.player_name }}</a>
     </li>
     {% endfor %}
 </ul>
