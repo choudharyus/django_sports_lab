@@ -1,17 +1,20 @@
-{% extends 'nba_app/base.html' %} {% block content %}
+{% extends 'nba_app/base.html' %}
 
-<h2>
-  {{ player.player_name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a>
-</h2>
+
+
+{% block content %}
+<h2>{{ player.name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a></h2>
+<a href="{% url 'player_delete' pk=player.pk %}">Delete</a>
 <h4>{{ player.player_position }}</h4>
 
-<img src="{{ player.player_photo }}" alt="" class="player-photo" />
-<div>
-  <a href="{% url 'player_delete' pk=player.pk %}">DELETE</a>
-</div>
-<!-- added line below -->
-<h2>
-  {{ player.player_name }} <a href="{% url 'player_edit' pk=player.pk %}">(edit)</a>
-</h2>
+<img src="{{ player.player_photo }}" alt="" class="player-photo">
 
+<h3>Stats <a href="{% url 'stat_create' %}">(+)</a></h3>
+<ul>
+    {% for stat in player.stats.all %}
+    <li>
+        <a href="{% url 'stat_detail' pk=stat.pk %}">{{ stat.player_team }}-{{ stat.player_point }}</a>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}

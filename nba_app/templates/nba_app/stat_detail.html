@@ -1,0 +1,9 @@
+{% extends 'nba_app/base.html' %}
+
+{% block content %}
+<h2>{{ stat.player_team }} <a href="{% url 'stat_edit' pk=stat.pk %}">(*edit*)</a></h2>
+<a href="{% url 'stat_delete' pk=stat.pk %}">Delete</a>
+<h3>Player: {{ stat.player.player_name }}</h3>
+
+Player Career Points: {{ stat.player_point }}
+{% endblock %}

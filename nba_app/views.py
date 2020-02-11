@@ -37,7 +37,7 @@ def player_edit(request, pk):
             return redirect('player_detail', pk=player.pk)
     else:
         form = PlayerForm(instance=player)
-    return render(request, 'nba_app/player_formƒ.html', {'form': form})
+    return render(request, 'nba_app/player_form.html', {'form': form})
 
 
 
