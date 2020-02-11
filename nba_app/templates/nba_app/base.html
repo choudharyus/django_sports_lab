@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NBA Players</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/tunr.css' %}"> -->
+</head>
+<body>
+    <h1>NBA Players and Statistics</h1>
+    <nav>
+        <!-- <a href="{% url 'song_list' %}">Songs</a> -->
+        <a href="{% url 'player_list' %}">Players</a>
+        <!-- {% if user.is_authenticated %} welcome, {{user.username}}
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">login</a>
+        {% endif %} -->
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
