@@ -6,13 +6,13 @@ urlpatterns = [
 
 
 
-    path('', views.player_list, name= 'player_list')
-    # path('songs/', views.song_list, name= 'song_list'),
-    # path('artists/<int:pk>', views.artist_detail, name='artist_detail'),
-    # path('songs/<int:pk>', views.song_detail, name='song_detail'),
-    # path('artists/new', views.artist_create, name='artist_create'),
-    # path('songs/new', views.song_create, name='song_create'),
-    # path('artists/<int:pk>/edit', views.artist_edit, name='artist_edit'),
-    # path('artists/<int:pk>/delete', views.artist_delete, name='artist_delete')
+    path('', views.player_list, name= 'player_list'),
+    path('stats/', views.stat_list, name= 'stat_list'),
+    path('players/<int:pk>', views.player_detail, name='player_detail'),
+    path('stats/<int:pk>', views.stat_detail, name='stat_detail'),
+    path('players/new', views.player_create, name='player_create'),
+    path('stats/new', views.stat_create, name='stat_create'),
+    path('players/<int:pk>/edit', views.player_edit, name='player_edit'),
+    path('players/<int:pk>/delete', views.player_delete, name='player_delete')
 
 ]
