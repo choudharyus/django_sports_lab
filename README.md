@@ -13,6 +13,9 @@ Full functional Python CRUD with Django.
 ## Screenshots
 
 ![picture](images/start.png)
+![picture](images/img1.png)
+![picture](images/img2.png)
+![picture](images/img3.png)
 
 ## Tech/framework used
 
@@ -30,7 +33,11 @@ At this time our project is MVP status.
 
 ## Code Example
 
+![picture](images/code1.png)
+![picture](images/code2.png)
+
 ## Installation
+
 
 ## How to use?
 
