@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+LOGIN_REDIRECT_URL = '/'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'nba_app',
     'django_extensions',
-    'django_social_project',
-    'social.apps.django_app.default'
+    'accounts'
 ]
 
 MIDDLEWARE = [
