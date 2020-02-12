@@ -3,8 +3,8 @@ from django.shortcuts import render, redirect
 from django.shortcuts import render
 from .models import Player, Stat
 from .forms import PlayerForm, StatForm
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 
 def player_list(request):
     players = Player.objects.all()
@@ -16,7 +16,7 @@ def player_detail(request, pk):
     return render(request, 'nba_app/player_detail.html', {'player': player})
 
 
-
+@login_required
 def player_create(request):
     if request.method == 'POST':
         form = PlayerForm(request.POST)
@@ -27,7 +27,7 @@ def player_create(request):
         form = PlayerForm()
     return render(request, 'nba_app/player_form.html', {'form': form})
 
-
+@login_required
 def player_edit(request, pk):
     player = Player.objects.get(pk=pk)
     if request.method == "POST":
@@ -40,7 +40,7 @@ def player_edit(request, pk):
     return render(request, 'nba_app/player_form.html', {'form': form})
 
 
-
+@login_required
 def player_delete(request, pk):
     Player.objects.get(id=pk).delete()
     return redirect('player_list')
@@ -56,7 +56,7 @@ def stat_detail(request, pk):
     return render(request, 'nba_app/stat_detail.html', {'stat': stat})
 
 
-
+@login_required
 def stat_create(request):
     if request.method == 'POST':
         form = StatForm(request.POST)
@@ -68,7 +68,7 @@ def stat_create(request):
     return render(request, 'nba_app/stat_form.html', {'form': form})
 
 
-
+@login_required
 def stat_edit(request, pk):
     stat = Stat.objects.get(pk=pk)
     if request.method == "POST":
@@ -81,7 +81,7 @@ def stat_edit(request, pk):
     return render(request, 'nba_app/stat_form.html', {'form': form})
 
 
-
+@login_required
 def stat_delete(request, pk):
     Stat.objects.get(id=pk).delete()
     return redirect('stat_list')
