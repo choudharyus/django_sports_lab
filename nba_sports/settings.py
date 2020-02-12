@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nba_app',
-    'django_extensions'
+    'django_extensions',
+    'django_social_project',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
